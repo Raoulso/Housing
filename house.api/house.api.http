@@ -1,0 +1,6 @@
+@house.api_HostAddress = http://localhost:5085
+
+GET {{house.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
