@@ -1,3 +1,38 @@
-<p>
-  login works
-</p>
+<main class="example-container">
+  <mat-card>
+    <mat-card-content>
+    </mat-card-content>
+  </mat-card>
+  <form class="">
+    <p>
+      <mat-form-field >
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="email" required>
+        @if (email.invalid) {
+          <mat-error>{{getErrorMessage()}}</mat-error>
+        }
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </p>
+  
+    <mat-checkbox class="example-margin" [formControl]="rememberMe">Remember me!</mat-checkbox>
+  
+    <button mat-fab extended matTooltip="Primary" color="primary" aria-label="Example fab with a heart icon">
+      login
+    </button>
+  </form>
+
+  <mat-divider></mat-divider>
+
+  <p>forgot password?</p>
+
+  <p>don't have an account? <span>Register</span></p>
+</main>
